@@ -2,67 +2,13 @@ import * as React from 'react';
 import { Button, View, Text } from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
-const Tab = createBottomTabNavigator();
-
-function Voos() {
-  return (
-    <View style={{ margin: 'auto' }}>
-      <Text>Jalapão</Text>
-    </View>
-  );
-}
-
-function MyTabs() {
-  return (
-    <Tab.Navigator>
-      <Tab.Screen name="Eventos" component={Eventos1} />
-      <Tab.Screen name="Voos" component={Voos} />
-    </Tab.Navigator>
-  );
-}
+import Eventos from './pages/Eventos';
 
 function Home({ navigation }) {
   return (
     <View style={{ margin: 'auto' }}>
-      <Text>Casinha</Text>
-      <Button onPress={() => navigation.navigate('eventos')} title="tenta" />
+      <Button onPress={() => navigation.navigate('Eventos')} title="Ir a Eventos" />
     </View>
-  );
-}
-
-function Eventos1({ navigation }) {
-  return (
-    <View style={{ margin: 'auto' }}>
-      <Text>Funciona1</Text>
-      <Button onPress={() => navigation.navigate('Eventos2', {texto: "Empadinha de camarão"})} title="Ue" />
-      <Button onPress={() => navigation.navigate('Eventos2', {texto: "Durmo um pouco pra ficar com sono"})} title="Durmo um pouco pra ficar com sono" />
-      <Button onPress={() => navigation.navigate('Eventos2', {texto: "Me da cigarro"})} title="Me da cigarro" />
-    </View>
-  );
-}
-
-function Eventos2({route}) {
-  const dados = route.params;
-  return (
-    <View style={{ margin: 'auto' }}>
-      <Text>{dados.texto}</Text>
-      <MyTabs />
-    </View>
-  );
-}
-
-const Stack = createNativeStackNavigator()
-
-function Eventos() {
-  const Stack = createNativeStackNavigator();
-  return (
-    <Stack.Navigator>
-      <Stack.Screen name="Eventos1" component={Eventos1} />
-      <Stack.Screen name="Eventos2" component={Eventos2} />
-    </Stack.Navigator>
   );
 }
 
@@ -78,8 +24,6 @@ export default function App() {
     </NavigationContainer>
   );
 }
-
-
 
 /* // export default function App() {
 //   return (
