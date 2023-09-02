@@ -6,7 +6,7 @@ const Tab = createBottomTabNavigator();
 
 export default function MyTabs() {
     return (
-        <Tab.Navigator>
+        <Tab.Navigator screenOptions={{ headerShown: false }}>
             <Tab.Screen name="Eventos" component={Eventos1} />
             <Tab.Screen name="Voos" component={Voos} />
         </Tab.Navigator>
