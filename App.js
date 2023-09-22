@@ -3,6 +3,7 @@ import { Button, View, Text } from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import Eventos from './pages/Eventos';
+import Fotos from './pages/Fotos';
 
 function Home({ navigation }) {
   return (
@@ -16,12 +17,13 @@ const Drawer = createDrawerNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer>
+    <Fotos />
+    /* <NavigationContainer>
       <Drawer.Navigator initialRouteName="Home">
         <Drawer.Screen name="Home" component={Home} />
         <Drawer.Screen name="Eventos" component={Eventos} />
       </Drawer.Navigator>
-    </NavigationContainer>
+    </NavigationContainer> */
   );
 }
 
